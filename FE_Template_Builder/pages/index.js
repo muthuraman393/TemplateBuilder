@@ -22,7 +22,7 @@ export default function App() {
   return (
     <div style={{ margin: '0 auto', width: '800px' }}>
       <Typography style={{ margin: '20px 0' }} variant="h5" align="center">
-        Basic Page Editor
+        FE TEmplate Builder
       </Typography>
       <Editor
         resolver={{
