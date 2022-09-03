@@ -78,7 +78,7 @@ export const Topbar = () => {
             onClick={() => {
               const json = query.serialize();
               copy(lz.encodeBase64(lz.compress(json)));
-              setSnackbarMessage('State copied to clipboard');
+              setSnackbarMessage('State copied to clipboard jhfhj');
             }}
             style={{ marginRight: '10px' }}
           >

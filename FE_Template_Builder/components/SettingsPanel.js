@@ -12,7 +12,7 @@ export const SettingsPanel = () => {
   const { actions, selected, isEnabled } = useEditor((state, query) => {
     const currentNodeId = query.getEvent('selected').last();
     let selected;
-
+    console.log(state.nodes,'state.nodes');
     if (currentNodeId) {
       selected = {
         id: currentNodeId,
@@ -31,7 +31,7 @@ export const SettingsPanel = () => {
   });
 
   return isEnabled && selected ? (
-    <Box bgcolor="rgba(0, 0, 0, 0.06)" mt={2} px={2} py={2}>
+    <Box bgcolor="rgba(226, 26, 185, 0.06)" mt={2} px={2} py={2}>
       <Grid container direction="column" spacing={0}>
         <Grid item>
           <Box pb={2}>

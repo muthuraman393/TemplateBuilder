@@ -10,6 +10,8 @@ import React from 'react';
 import { Button } from './user/Button';
 import { Card } from './user/Card';
 import { Container } from './user/Container';
+import { PageComponent } from './user/PageComponent';
+
 import { Text } from './user/Text';
 
 export const Toolbox = () => {
@@ -52,13 +54,13 @@ export const Toolbox = () => {
             ref={(ref) =>
               connectors.create(
                 ref,
-                <Element canvas is={Container} padding={20} />
+                <Element canvas is={Container} padding={20} background="#f2f7f6" />
               )
             }
             variant="contained"
             data-cy="toolbox-container"
           >
-            Container
+            Row 
           </MaterialButton>
         </Grid>
         <Grid container direction="column" item>
@@ -68,6 +70,20 @@ export const Toolbox = () => {
             data-cy="toolbox-card"
           >
             Card
+          </MaterialButton>
+        </Grid>
+        <Grid container direction="column" item>
+          <MaterialButton
+            ref={(ref) =>
+              connectors.create(
+                ref,
+                <Element canvas is={PageComponent} padding={22} height={800} />
+              )
+            }
+            variant="contained"
+            data-cy="toolbox-container"
+          >
+            Add New Page
           </MaterialButton>
         </Grid>
       </Grid>
