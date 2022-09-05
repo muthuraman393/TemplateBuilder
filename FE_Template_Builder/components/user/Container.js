@@ -8,11 +8,14 @@ export const Container = ({ background, padding, children, ...props }) => {
   const {
     connectors: { connect, drag },
   } = useNode();
+  /*console.log('containerprops',props);*/
+  const {height,minheight,datacy} =props;
   return (
+    
     <Paper
       {...props}
       ref={(ref) => connect(drag(ref))}
-      style={{ margin: '5px 0', background, padding: `${padding}px` }}
+      style={{ margin: '5px 0', background,height,minHeight:minheight, padding: `${padding}px` }}
     >
       {children}
     </Paper>
@@ -64,4 +67,8 @@ Container.craft = {
   related: {
     settings: ContainerSettings,
   },
+  rules: {
+    // Only accept Text
+    canMoveIn: (incomingNodes) => { console.log('proooi',incomingNodes);  return incomingNodes.every(incomingNode => incomingNode.data.name == "PageComponent")}
+  }
 };

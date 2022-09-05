@@ -4,15 +4,15 @@ import { Paper, FormControl, FormLabel } from '@material-ui/core';
 import ColorPicker from 'material-ui-color-picker';
 import React from 'react';
 
-export const PageComponent = ({ background, padding,height, children, ...props }) => {
+export const PageComponent = ({ background, padding,height,border, children, ...props }) => {
   const {
     connectors: { connect, drag },
-  } = useNode();
+  } = useNode(); 
   return (
     <Paper
       {...props}
       ref={(ref) => connect(drag(ref))}
-      style={{ margin: '35px 0', background, padding: `${padding}`, height: `${height}px` }}
+      style={{ margin: '35px 0', background, padding: `${padding}px`, height: `${height}px`,border:`${border}` }}
     >
       {children}
     </Paper>
@@ -64,4 +64,9 @@ PageComponent.craft = {
   related: {
     settings: PageComponentSettings,
   },
+  rules: {
+    canMoveIn: (incomingNodes) =>
+      incomingNodes.every((incomingNode) => incomingNode.data.type !== PageComponent),
+  },
+
 };

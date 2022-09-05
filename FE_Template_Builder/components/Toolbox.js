@@ -11,7 +11,7 @@ import { Button } from './user/Button';
 import { Card } from './user/Card';
 import { Container } from './user/Container';
 import { PageComponent } from './user/PageComponent';
-
+import {israndomcolor,israndomlightcolor} from '../utils/commonutils';
 import { Text } from './user/Text';
 
 export const Toolbox = () => {
@@ -77,7 +77,8 @@ export const Toolbox = () => {
             ref={(ref) =>
               connectors.create(
                 ref,
-                <Element canvas is={PageComponent} padding={22} height={800} />
+                <Element canvas is={PageComponent} background={israndomlightcolor()} padding={15} height={800} border={"1pt solid black"}
+                />
               )
             }
             variant="contained"

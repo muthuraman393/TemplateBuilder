@@ -50,9 +50,11 @@ export default function App() {
                 canvas
                 is={Container}
                 padding={35}
+                minheight={"300px"}
+                height={"auto"}
                 background="#eeeeee"
                 data-cy="root-container"
-              >
+              ><div style={{ color: '#433333', fontFamily: 'inherit',fontWeight:'bolder',fontSize:"35px",padding:"25px 125px",opacity:"0.5" }}> Start By Adding a New Page</div>
                 {/* <Card data-cy="frame-card" />
                 <Button text="Click me" size="small" data-cy="frame-button" />
                 <Text fontSize={20} text="Hi world!" data-cy="frame-text" />
@@ -68,15 +70,16 @@ export default function App() {
                     text="It's me again!"
                     data-cy="frame-container-text"
                   />
-      </Element>*/}
+      </Element>
                 <Element
                   canvas
                   is={PageComponent}
                   padding={"50px 20px"}
                   height={1000}
                   background="#fff"
+                  border={"1pt solid black"}
                   data-cy="frame-container"
-                ></Element>
+                ></Element>*/}
               </Element>
             </Frame>
           </Grid>
