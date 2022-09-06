@@ -20,3 +20,10 @@ export const israndomlightcolor= () =>{
     return color;
 }
 
+export const canMoveInContainerRule = (incomingNodes,data) => { 
+    console.log('data.data.props.outercontainer',data.data.props.outercontainer);
+    if(data.data.props.outercontainer == 'true') 
+    return incomingNodes.every(incomingNode => incomingNode.data.name == "PageComponent")
+    else
+    return incomingNodes.every(incomingNode => incomingNode.data.name != "PageComponent")
+  }

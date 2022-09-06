@@ -17,6 +17,7 @@ export const SettingsPanel = () => {
       selected = {
         id: currentNodeId,
         name: state.nodes[currentNodeId].data.name,
+        displayName: state.nodes[currentNodeId].data.displayName,
         settings:
           state.nodes[currentNodeId].related &&
           state.nodes[currentNodeId].related.settings,
@@ -43,7 +44,7 @@ export const SettingsPanel = () => {
                 <Chip
                   size="small"
                   color="primary"
-                  label={selected.name}
+                  label={selected.displayName}
                   data-cy="chip-selected"
                 />
               </Grid>

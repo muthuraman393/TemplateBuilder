@@ -60,13 +60,18 @@ export const PageComponentDefaultProps = {
 };
 
 PageComponent.craft = {
+  displayName:'*Page',
   props: PageComponentDefaultProps,
   related: {
     settings: PageComponentSettings,
   },
   rules: {
-    canMoveIn: (incomingNodes) =>
-      incomingNodes.every((incomingNode) => incomingNode.data.type !== PageComponent),
+    canMoveIn: (incomingNodes,state) =>{
+
+      console.log('icncome',incomingNodes[0].data.type,'statechanges',state); 
+      incomingNodes.every((incomingNode) => incomingNode.data.type !== PageComponent)
+    }
+      ,
   },
 
 };

@@ -2,6 +2,7 @@ import { useNode } from '@craftjs/core';
 import { Slider } from '@material-ui/core';
 import { Paper, FormControl, FormLabel } from '@material-ui/core';
 import ColorPicker from 'material-ui-color-picker';
+import {canMoveInContainerRule} from '../../utils/commonutils';
 import React from 'react';
 
 export const Container = ({ background, padding, children, ...props }) => {
@@ -9,7 +10,7 @@ export const Container = ({ background, padding, children, ...props }) => {
     connectors: { connect, drag },
   } = useNode();
   /*console.log('containerprops',props);*/
-  const {height,minheight,datacy} =props;
+  const {height,minheight} =props;
   return (
     
     <Paper
@@ -60,15 +61,17 @@ export const ContainerSettings = () => {
 export const ContainerDefaultProps = {
   background: '#ffffff',
   padding: 3,
+  outercontainer:"false",
 };
 
 Container.craft = {
   props: ContainerDefaultProps,
+  
   related: {
     settings: ContainerSettings,
   },
   rules: {
     // Only accept Text
-    canMoveIn: (incomingNodes) => { console.log('proooi',incomingNodes);  return incomingNodes.every(incomingNode => incomingNode.data.name == "PageComponent")}
+    canMoveIn: canMoveInContainerRule
   }
 };

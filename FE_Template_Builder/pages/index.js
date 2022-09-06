@@ -54,8 +54,9 @@ export default function App() {
                 height={"auto"}
                 background="#eeeeee"
                 data-cy="root-container"
-              ><div style={{ color: '#433333', fontFamily: 'inherit',fontWeight:'bolder',fontSize:"35px",padding:"25px 125px",opacity:"0.5" }}> Start By Adding a New Page</div>
-                {/* <Card data-cy="frame-card" />
+                outercontainer = {"true"}
+              >
+                {/*<div style={{ color: '#433333', fontFamily: 'inherit',fontWeight:'bolder',fontSize:"35px",padding:"25px 125px",opacity:"0.5" }}> Start By Adding a New Page</div> <Card data-cy="frame-card" />
                 <Button text="Click me" size="small" data-cy="frame-button" />
                 <Text fontSize={20} text="Hi world!" data-cy="frame-text" />
                 <Element

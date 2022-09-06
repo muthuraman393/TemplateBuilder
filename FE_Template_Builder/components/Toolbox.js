@@ -77,7 +77,7 @@ export const Toolbox = () => {
             ref={(ref) =>
               connectors.create(
                 ref,
-                <Element canvas is={PageComponent} background={israndomlightcolor()} padding={15} height={800} border={"1pt solid black"}
+                <Element canvas is={PageComponent}  background={israndomlightcolor()} padding={15} height={800} border={"1pt solid black"}
                 />
               )
             }
